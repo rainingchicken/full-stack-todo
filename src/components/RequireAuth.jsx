@@ -8,9 +8,12 @@ const RequireAuth = (props) => {
 
   const checkAuth = async () => {
     try {
-      await axios.get("http://localhost:3000/check-auth", {
-        withCredentials: true,
-      });
+      await axios.get(
+        "https://full-stack-todo-server.onrender.com/check-auth",
+        {
+          withCredentials: true,
+        }
+      );
       setLoggedin(true);
       //   console.log("checking sucess and loggedin is", loggedin);
       //   console.log(res);

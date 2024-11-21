@@ -22,9 +22,12 @@ function NotesPage() {
   //functions
   const fetchNotes = async () => {
     //fetch the ntoes
-    const res = await axios.get("http://localhost:3000/notes", {
-      withCredentials: true,
-    });
+    const res = await axios.get(
+      "https://full-stack-todo-server.onrender.com/notes",
+      {
+        withCredentials: true,
+      }
+    );
 
     //set to state
     // set({
@@ -46,9 +49,13 @@ function NotesPage() {
     e.preventDefault();
 
     //create the note
-    const res = await axios.post("http://localhost:3000/notes", createForm, {
-      withCredentials: true,
-    });
+    const res = await axios.post(
+      "https://full-stack-todo-server.onrender.com/notes",
+      createForm,
+      {
+        withCredentials: true,
+      }
+    );
 
     //update state
     setNotes([...notes, res.data.note]);
@@ -63,9 +70,12 @@ function NotesPage() {
 
   const deleteNote = async (_id) => {
     //delete the note
-    const res = await axios.delete(`http://localhost:3000/notes/${_id}`, {
-      withCredentials: true,
-    });
+    const res = await axios.delete(
+      `https://full-stack-todo-server.onrender.com/notes/${_id}`,
+      {
+        withCredentials: true,
+      }
+    );
 
     //update state
     const newNotes = [...notes].filter((note) => {
@@ -96,7 +106,7 @@ function NotesPage() {
     const { title, body } = updateForm;
     //send update request
     const res = await axios.put(
-      `http://localhost:3000/notes/${updateForm._id}`,
+      `https://full-stack-todo-server.onrender.com/notes/${updateForm._id}`,
       {
         title,
         body,

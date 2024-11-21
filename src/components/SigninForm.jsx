@@ -17,9 +17,13 @@ const SigninForm = () => {
   };
   const signup = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:3000/signup", signupForm, {
-      withCredentials: true,
-    });
+    await axios.post(
+      "https://full-stack-todo-server.onrender.com/signup",
+      signupForm,
+      {
+        withCredentials: true,
+      }
+    );
     console.log(signupForm);
     setsignupForm({
       email: "",

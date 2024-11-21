@@ -24,9 +24,13 @@ export default function LoginForm() {
 
   const login = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:3000/login", loginForm, {
-      withCredentials: true,
-    });
+    await axios.post(
+      "https://full-stack-todo-server.onrender.com/login",
+      loginForm,
+      {
+        withCredentials: true,
+      }
+    );
 
     // setLoggedin(true);
     setLoginForm({

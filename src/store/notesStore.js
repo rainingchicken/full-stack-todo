@@ -5,7 +5,9 @@ const notesStore = create((set) => ({
   notes: null,
   fetchNotes: async () => {
     //fetch the ntoes
-    const res = await axios.get("http://localhost:3000/notes");
+    const res = await axios.get(
+      "https://full-stack-todo-server.onrender.com/notes"
+    );
 
     //set to state
     set({

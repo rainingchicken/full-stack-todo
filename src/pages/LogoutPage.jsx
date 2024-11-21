@@ -5,7 +5,9 @@ import axios from "axios";
 const LogoutPage = () => {
   const { setLoggedin } = useContext(loggedinContext);
   const logout = async () => {
-    await axios.get("http://localhost:3000/logout", { withCredentials: true });
+    await axios.get("https://full-stack-todo-server.onrender.com/logout", {
+      withCredentials: true,
+    });
     setLoggedin(false);
   };
   useEffect(() => {
